@@ -10,6 +10,6 @@ add_executable(main main.cpp)
 target_link_libraries(main fmt::fmt)
 
 enable_testing()
-add_executable(test test.cpp)
-target_link_libraries(test Catch2::Catch2 fmt::fmt)
+add_executable(test_fmt test.cpp)
+target_link_libraries(test_fmt Catch2::Catch2WithMain fmt::fmt)
 
