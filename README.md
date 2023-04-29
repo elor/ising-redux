@@ -2,7 +2,7 @@
 
 Simple C++ Bootstrap:
 
-* install dependencies using conan
+* install dependencies using CPM
 * build project and tests with cmake
 * test using ctest
 
@@ -13,6 +13,10 @@ Bonus:
 ## Reasoning
 
 C++ Bootstrapping is too tedious.
+
+I don't want to deal with conan files and package repositories, centralized approval via github issues for wanting to use a package.
+I just want to download the package from e.g. github, compile and link against it.
+Nothing more.
 
 ## Relevant xkcd
 
