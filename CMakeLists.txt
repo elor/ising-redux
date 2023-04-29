@@ -12,4 +12,5 @@ target_link_libraries(main fmt::fmt)
 enable_testing()
 add_executable(test_fmt test.cpp)
 target_link_libraries(test_fmt Catch2::Catch2WithMain fmt::fmt)
+add_test(NAME test_fmt COMMAND test_fmt)
 
