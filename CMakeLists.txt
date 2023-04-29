@@ -1,18 +1,15 @@
-cmake_minimum_required(VERSION 3.12)
+cmake_minimum_required(VERSION 3.14 FATAL_ERROR)
 project(CppBootstrap)
 
-set(CMAKE_CXX_STANDARD 20)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
+include(cmake/CPM.cmake)
 
-include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
-conan_basic_setup()
+CPMAddPackage("gh:fmtlib/fmt#9.1.0")
+CPMAddPackage("gh:catchorg/Catch2@3.3.2")
 
 add_executable(main main.cpp)
-target_link_libraries(main ${CONAN_LIBS})
+target_link_libraries(main fmt::fmt)
 
 enable_testing()
-
-add_executable(my_test test.cpp)
-target_link_libraries(my_test ${CONAN_LIBS})
-add_test(NAME my_test COMMAND my_test)
+add_executable(test test.cpp)
+target_link_libraries(test Catch2::Catch2 fmt::fmt)
 
